@@ -4,13 +4,16 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        String node = "";
 
-        try {
-            menu(linkedList);
-            } catch (Exception e){
-            System.out.println("Insert a correct number!");
+        while (true) {
+            try {
+                menu(linkedList);
+            } catch (Exception e) {
+                System.out.println("Insert a correct number!");
+                System.out.println("==================");
             }
+        }
+
 
     }
 
@@ -51,6 +54,7 @@ public class Application {
     }
 
     public static void menu(LinkedList linkedList){
+
         while (true) {
             System.out.println("1.Check isEmpty()\n2.Add\n3.Remove\n4.Search\n5.Exit\n0.Show LinkedList");
             Scanner sc = new Scanner(System.in);
