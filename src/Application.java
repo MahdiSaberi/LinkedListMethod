@@ -61,37 +61,42 @@ public class Application {
             int select = sc.nextInt();
             String node = "";
 
-            switch (select) {
-                case 0:
-                    System.out.println(linkedList);
-                    break;
+            if (select <= 5) {
 
-                case 1:
-                    System.out.println(linkedList.isEmpty());
-                    System.out.println("==================");
-                    break;
+                switch (select) {
+                    case 0:
+                        System.out.println(linkedList);
+                        break;
 
-                case 2:
-                    node = setNode();
-                    addNode(node,linkedList);
-                    System.out.println("==================");
-                    break;
+                    case 1:
+                        System.out.println(linkedList.isEmpty());
+                        System.out.println("==================");
+                        break;
 
-                case 3:
-                    node = setNode();
-                    remNode(node,linkedList);
-                    System.out.println("==================");
-                    break;
+                    case 2:
+                        node = setNode();
+                        addNode(node, linkedList);
+                        System.out.println("==================");
+                        break;
 
-                case 4:
-                    node = setNode();
-                    search(node,linkedList);
-                    System.out.println("==================");
-                    break;
+                    case 3:
+                        node = setNode();
+                        remNode(node, linkedList);
+                        System.out.println("==================");
+                        break;
 
-                case 5:
-                    System.exit(0);
-            }
+                    case 4:
+                        node = setNode();
+                        search(node, linkedList);
+                        System.out.println("==================");
+                        break;
+
+                    case 5:
+                        System.exit(0);
+                        break;
+                }
+            } else if (select > 5)
+                throw new RuntimeException("Insert correct number!");
         }
     }
 }
