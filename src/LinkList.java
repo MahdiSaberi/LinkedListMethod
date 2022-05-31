@@ -1,7 +1,7 @@
 public class LinkList {
     Node head;
 
-    public static LinkList insert(LinkList list, int data) {
+    public LinkList insert(LinkList list, int data) {
 
         Node new_node = new Node(data);
         new_node.next = null;
@@ -23,21 +23,18 @@ public class LinkList {
         return list;
     }
 
-    public static LinkList deleteByKey(LinkList list, int key) {
+    public LinkList delete(LinkList list, int key) {
         Node currNode = list.head, prev = null;
 
 
         if (currNode != null && currNode.data == key) {
             list.head = currNode.next;
-
-
             System.out.println(key + " found and deleted");
 
             return list;
         }
 
         while (currNode != null && currNode.data != key) {
-
             prev = currNode;
             currNode = currNode.next;
         }
@@ -57,7 +54,31 @@ public class LinkList {
         return list;
     }
 
-    public static void printList(LinkList list) {
+    public LinkList search(LinkList list, int key) {
+        Node currNode = list.head, prev = null;
+        if (currNode != null && currNode.data == key) {
+            System.out.println("Node found!");
+            return list;
+        }
+
+        while (currNode != null && currNode.data != key) {
+            prev = currNode;
+            currNode = currNode.next;
+        }
+
+        if (currNode != null) {
+            System.out.println("Node found!");
+            return list;
+        }
+
+        if (currNode == null) {
+            System.out.println(key + " not found");
+        }
+
+        return list;
+    }
+
+    public void printList(LinkList list) {
         Node currNode = list.head;
         System.out.print("LinkedList: ");
 
